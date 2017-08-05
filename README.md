@@ -10,8 +10,11 @@ I have used express api with nodemailer. This api use nodemailer for smtp connec
 # Installation
 
 step 1 - clone the git with url: https://github.com/samarmeena/express-nodemailer.git
+
 step 2 - run npm install
+
 step 3 - make required change in sendmail route like mail server configuration.
+
 step 4 - run npm start
 
 And now you will see in output that "your server is ready to take mails". Here you are done with all configurations. 
