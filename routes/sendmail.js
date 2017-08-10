@@ -24,51 +24,34 @@ router.get('/', function (req, res, next) {
 
     var sendmailreq = "<html>\n\
                         <body>\n\
-                        <table>\n\
-                        <tr>\n\
-                        <td>Name: </td>" +  req.param('name') + "<td></td>\n\
-                        </tr>\n\
-                        <tr>\n\
-                        <td>Email: </td><td>" + req.param('email') + "</td>\n\
-                        </tr>\n\
-                        <tr>\n\
-                        <td>Message: </td>" + req.param('text') + "<td></td>\n\
-                        </tr>\n\
-                        <tr>\n\
-                        <td>Newslater: </td>" + req.param('newslater') + "<td></td>\n\
-                        </tr>\n\
-                        </table></body></html>";
+                        <p> Name: " +  req.param('name') + "</p>\n\
+                        <p> Email: " +  req.param('email') + "</p>\n\
+                        <p> Query: " +  req.param('msg') + "</p>\n\
+                        <p> Newsletter: " +  req.param('newsletter') + "</p>\n\
+                        </body>\n\
+                        </html>";
     var sendmailrevemail = "<html>\n\
                         <body>\n\
-                        <h1>Thank you for your query</h1>\n\\n\
-                        <h6>We attached your query</h6>\n\
-                        <table>\n\
-                        <tr>\n\
-                        <td>Name: </td>" +  req.param('name') + "<td></td>\n\
-                        </tr>\n\
-                        <tr>\n\
-                        <td>Email: </td><td>" + req.param('email') + "</td>\n\
-                        </tr>\n\
-                        <tr>\n\
-                        <td>Message: </td>" + req.param('text') + "<td></td>\n\
-                        </tr>\n\
-                        <tr>\n\
-                        <td>Newslater: </td>" + req.param('newslater') + "<td></td>\n\
-                        </tr>\n\
-                        </table>\n\
-                       </body></html>";
+                        <h1>Thank you for your query</h1>\n\
+                        <h6>We attached your query details details</h6>\n\
+                        <p> Name: " +  req.param('name') + "</p>\n\
+                        <p> Email: " +  req.param('email') + "</p>\n\
+                        <p> Query: " +  req.param('msg') + "</p>\n\
+                        <p> Newsletter: " +  req.param('newsletter') + "</p>\n\
+                       </body>\n\
+                       </html>";
 
     var sender_email = req.param('email');
 
     let mailOptions = {
         from: 'User <username@domain.com>',
         to: 'username@domain.com',
-        subject: "form request query",
+        subject: "a new query arrived from " +  req.param('email') + "",
         html: sendmailreq
     };
 
     let mailreverse = {
-        from: 'victim <victim@domain.com>',
+        from: 'User <username@domain.com>',
         to: sender_email,
         subject: "your query on domain.com",
         html: sendmailrevemail
