@@ -23,9 +23,9 @@ And now you will see in output that "your server is ready to take mails". Here y
 
 after running api you can visit on http://localhost:3000
 
-to send a test email use this query parameters in your url 
+to test your form, submit form details on below api 
 
-http://localhost:3000/sendmail?name=victimname&subject=victimsubject&text=victimmessage&email=victimemail@domain.com&newslater=yes
+http://localhost:3000/sendmail?name=formname&email=form@email.com&msg=form%20message&newsletter=true
 
 now you can see in output that msg send and api response with email send.
 
