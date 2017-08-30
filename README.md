@@ -1,4 +1,4 @@
-# express-nodemailer
+# Express-nodemailer
 Example of sending smtp mail with express api using nodemailer
 
 # This is working example of express-nodemailer for new developers.
